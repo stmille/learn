@@ -1,6 +1,12 @@
 app:
   build: .
+  command: flask run # allows docker-compose up
+  working_dir: /app
   volumes:
     - .:/app
   ports:
     - "5000:5000"
+  environment: # Define environmental variables
+    FLASK_APP: hello.py
+
+
